@@ -8,8 +8,8 @@ function App() {
   const handleChange = (event: React.SyntheticEvent, newvalue : string) =>{
     setValue(newvalue)
   }
-  var [doneCard, setdoneCard] = useState([{
-    'id':1, 'title': "Card1 title", "description" : "this is card1 decscription"},
+  var [doneCard, setdoneCard] = useState([
+    {'id':1, 'title': "Card1 title", "description" : "this is card1 decscription"},
     {'id':2, 'title': "Card2 title", "description" : "this is card2 decscription"},
     {'id':3, 'title': "Card3 title", "description" : "this is card3 decscription"}
 ])
@@ -22,7 +22,7 @@ function App() {
 
   const handleMovetoDone = (card) => {
     setdoingCard(doingCard.filter(c => c.id !== card.id))
-    setdoneCard(...doneCard, card)
+    setdoneCard([...doneCard, card])
   }
   return (
 <>
